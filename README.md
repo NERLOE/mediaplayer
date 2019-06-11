@@ -1,0 +1,1 @@
+This is a recreation of the media player, made by the streaming service Viaplay.
