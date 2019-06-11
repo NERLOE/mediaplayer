@@ -1,98 +1,99 @@
 [{
-        "title": "A Very Futuristic Smartphone...",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/A_Very_Futuristic_Smartphone....mp4",
-        "thumbnail": "data:image/webp;base64,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",
-        "subtitles": null
-    },
-    {
-        "title": "Pokémon Detective Pikachu",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/Detective_Pikachu.mkv",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
-        "subtitles": [{
-            "lang": "en",
-            "langName": "Engelsk",
-            "path": "./subtitles/Detective_Pikachu/en_detective_pikachu.srt"
-        }]
-    },
-    {
-        "title": "Avengers: Endgame",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/Avengers_Endgame.mkv",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
-        "subtitles": [{
-            "lang": "en",
-            "langName": "Engelsk",
-            "path": "./subtitles/Avengers_Endgame/en_avengers_endgame.srt"
-        }]
-    },
-    {
-        "title": "Jurassic World: Fallen Kingdom",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/Jurassic_World_Fallen_Kingdom.mp4",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BNzIxMjYwNDEwN15BMl5BanBnXkFtZTgwMzk5MDI3NTM@._V1_.jpg",
-        "subtitles": [{
-                "lang": "da",
-                "langName": "Dansk",
-                "path": "./subtitles/Jurassic_World_Fallen_Kingdom/da_jurassic_world_fallen_kingdom.srt"
-            },
-            {
-                "lang": "en",
-                "langName": "Engelsk",
-                "path": "./subtitles/Jurassic_World_Fallen_Kingdom/en_jurassic_world_fallen_kingdom.srt"
-            }
-        ]
-    },
-    {
-        "title": "Captain Marvel",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/Captain_Marvel.mp4",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
-        "subtitles": [{
-                "lang": "da",
-                "langName": "Dansk",
-                "path": "./subtitles/Captain_Marvel/da_captain_marvel.srt"
-            },
-            {
-                "lang": "en",
-                "langName": "Engelsk",
-                "path": "./subtitles/Captain_Marvel/en_captain_marvel.srt"
-            }
-        ]
-    },
-    {
-        "title": "Saving Private Ryan",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/Saving_Private_Ryan.mp4",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SY1000_CR0,0,679,1000_AL_.jpg",
-        "subtitles": [{
-                "lang": "da",
-                "langName": "Dansk",
-                "path": "./subtitles/Saving_Private_Ryan/da_saving_private_ryan.srt"
-            },
-            {
-                "lang": "en",
-                "langName": "Engelsk",
-                "path": "./subtitles/Saving_Private_Ryan/en_saving_private_ryan.srt"
-            }
-        ]
-    },
-    {
-        "title": "Deadpool 2",
-        "subTitle": "",
-        "media": "http://localhost:3000/movies/Deadpool_2.mp4",
-        "thumbnail": "https://m.media-amazon.com/images/M/MV5BNjk1Njk3YjctMmMyYS00Y2I4LThhMzktN2U0MTMyZTFlYWQ5XkEyXkFqcGdeQXVyODM2ODEzMDA@._V1_.jpg",
-        "subtitles": [{
-                "lang": "da",
-                "langName": "Dansk",
-                "path": "./subtitles/Deadpool_2/da_deadpool_2.srt"
-            },
-            {
-                "lang": "en",
-                "langName": "Engelsk",
-                "path": "./subtitles/Deadpool_2/en_deadpool_2.srt"
-            }
-        ]
-    }
+    "title": "A Very Futuristic Smartphone...",
+    "subTitle": "",
+    "media": "./movies/A_Very_Futuristic_Smartphone....mp4",
+    "thumbnail": "data:image/webp;base64,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",
+    "subtitles": null
+  },
+  {
+    "title": "Pokémon Detective Pikachu",
+    "subTitle": "",
+    "media": "./movies/Detective_Pikachu.mkv",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    "subtitles": [{
+      "lang": "en",
+      "langName": "Engelsk",
+      "path": "./subtitles/Detective_Pikachu/en_detective_pikachu.srt"
+    }]
+  },
+  {
+    "title": "Avengers: Endgame",
+    "subTitle": "",
+    "media": "./movies/Avengers_Endgame.mkv",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    "subtitles": [{
+      "lang": "en",
+      "langName": "Engelsk",
+      "path": "./subtitles/Avengers_Endgame/en_avengers_endgame.srt"
+    }]
+  },
+  {
+    "title": "Jurassic World: Fallen Kingdom",
+    "subTitle": "",
+    "media": "./movies/Jurassic_World_Fallen_Kingdom.mp4",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BNzIxMjYwNDEwN15BMl5BanBnXkFtZTgwMzk5MDI3NTM@._V1_.jpg",
+    "subtitles": [{
+        "lang": "da",
+        "langName": "Dansk",
+        "path": "./subtitles/Jurassic_World_Fallen_Kingdom/da_jurassic_world_fallen_kingdom.srt"
+      },
+      {
+        "lang": "en",
+        "langName": "Engelsk",
+        "path": "./subtitles/Jurassic_World_Fallen_Kingdom/en_jurassic_world_fallen_kingdom.srt"
+      }
+    ]
+  },
+  {
+    "title": "Captain Marvel",
+    "subTitle": "",
+    "media": "./movies/Captain_Marvel.mp4",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
+    "subtitles": [{
+        "lang": "da",
+        "langName": "Dansk",
+        "path": "./subtitles/Captain_Marvel/da_captain_marvel.srt"
+      },
+      {
+        "lang": "en",
+        "langName": "Engelsk",
+        "path": "./subtitles/Captain_Marvel/en_captain_marvel.srt"
+      }
+    ]
+  },
+  {
+    "title": "Saving Private Ryan",
+    "subTitle": "",
+    "media": "./movies/Saving_Private_Ryan.mp4",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SY1000_CR0,0,679,1000_AL_.jpg",
+    "subtitles": [{
+        "lang": "da",
+        "langName": "Dansk",
+        "path": "./subtitles/Saving_Private_Ryan/da_saving_private_ryan.srt"
+      },
+      {
+        "lang": "en",
+        "langName": "Engelsk",
+        "path": "./subtitles/Saving_Private_Ryan/en_saving_private_ryan.srt"
+      }
+    ]
+  },
+  {
+    "title": "Deadpool 2",
+    "subTitle": "",
+    "media": "./movies/Deadpool_2.mp4",
+    "thumbnail": "https://cdn.images.express.co.uk/img/dynamic/36/590x/deadpool-2-release-date-938445.jpg",
+    "showTitle": false,
+    "subtitles": [{
+        "lang": "da",
+        "langName": "Dansk",
+        "path": "./subtitles/Deadpool_2/da_deadpool_2.srt"
+      },
+      {
+        "lang": "en",
+        "langName": "Engelsk",
+        "path": "./subtitles/Deadpool_2/en_deadpool_2.srt"
+      }
+    ]
+  }
 ]

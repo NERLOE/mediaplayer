@@ -30,14 +30,19 @@ class BottomUI extends Component {
           <div className="ui-cell image" style={props.coverImg} />
           <div className="text">
             <div className="text-container">
-              <h1
-                className="title"
-                style={
-                  props.mediaData.subTitle === "" ? { display: "block" } : null
-                }
-              >
-                {props.mediaData.title}
-              </h1>
+              {props.mediaData.showTitle == null ||
+                (props.mediaData.showTitle && (
+                  <h1
+                    className="title"
+                    style={
+                      props.mediaData.subTitle === ""
+                        ? { display: "block" }
+                        : null
+                    }
+                  >
+                    {props.mediaData.title}
+                  </h1>
+                ))}
               {props.mediaData.subTitle !== "" && (
                 <h2 className="subtext">{props.mediaData.subTitle}</h2>
               )}
