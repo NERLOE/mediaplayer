@@ -113,8 +113,62 @@ export class Subtitles extends Component {
       if (sub.split("\n").length > 1) {
         let subSplit = sub.split("\n");
         if (
-          subSplit[0].split("<i>") != null &&
-          subSplit[1].split("</i>") != null
+          subSplit[0].indexOf("<i>") != -1 &&
+          subSplit[0].indexOf("</i>") != -1
+        ) {
+          let string1 = subSplit[0].replace("<i>", "").replace("</i>", "");
+
+          if (
+            subSplit[1].indexOf("<i>") != -1 &&
+            subSplit[1].indexOf("</i>") != -1
+          ) {
+            let string2 = subSplit[1].replace("<i>", "").replace("</i>", "");
+            out = (
+              <p>
+                <i>{string1}</i>
+                <br />
+                <i>{string2}</i>
+              </p>
+            );
+          } else {
+            out = (
+              <p>
+                <i>{string1}</i>
+                <br />
+                {subSplit[1]}
+              </p>
+            );
+          }
+        } else if (
+          subSplit[1].indexOf("<i>") != -1 &&
+          subSplit[1].indexOf("</i>") != -1
+        ) {
+          let string2 = subSplit[1].replace("<i>", "").replace("</i>", "");
+
+          if (
+            subSplit[0].indexOf("<i>") != -1 &&
+            subSplit[0].indexOf("</i>") != -1
+          ) {
+            let string1 = subSplit[0].replace("<i>", "").replace("</i>", "");
+            out = (
+              <p>
+                <i>{string1}</i>
+                <br />
+                <i>{string2}</i>
+              </p>
+            );
+          } else {
+            out = (
+              <p>
+                {subSplit[0]}
+                <br />
+                <i>{string2}</i>
+              </p>
+            );
+          }
+        } else if (
+          subSplit[0].indexOf("<i>") != -1 &&
+          subSplit[1].indexOf("</i>") != -1
         ) {
           let string1 = subSplit[0].replace("<i>", "");
           let string2 = subSplit[1].replace("</i>", "");
@@ -135,13 +189,17 @@ export class Subtitles extends Component {
           );
         }
       } else {
-        if (sub.split("<i>") != null) {
+        if (sub.indexOf("<i>") != -1) {
+          console.log(sub.indexOf("<i>"));
           let string = sub.replace("<i>", "").replace("</i>", "");
           sub = <i>{string}</i>;
+          out = <p>{sub}</p>;
+        } else {
+          out = <p>{sub}</p>;
         }
-        out = <p>{sub}</p>;
       }
 
+      console.log(out);
       return out;
     }
 

@@ -60,5 +60,39 @@
                 "path": "./subtitles/Captain_Marvel/en_captain_marvel.srt"
             }
         ]
+    },
+    {
+        "title": "Saving Private Ryan",
+        "subTitle": "",
+        "media": "http://localhost:3000/movies/Saving_Private_Ryan.mp4",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SY1000_CR0,0,679,1000_AL_.jpg",
+        "subtitles": [{
+                "lang": "da",
+                "langName": "Dansk",
+                "path": "./subtitles/Saving_Private_Ryan/da_saving_private_ryan.srt"
+            },
+            {
+                "lang": "en",
+                "langName": "Engelsk",
+                "path": "./subtitles/Saving_Private_Ryan/en_saving_private_ryan.srt"
+            }
+        ]
+    },
+    {
+        "title": "Deadpool 2",
+        "subTitle": "",
+        "media": "http://localhost:3000/movies/Deadpool_2.mp4",
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BNjk1Njk3YjctMmMyYS00Y2I4LThhMzktN2U0MTMyZTFlYWQ5XkEyXkFqcGdeQXVyODM2ODEzMDA@._V1_.jpg",
+        "subtitles": [{
+                "lang": "da",
+                "langName": "Dansk",
+                "path": "./subtitles/Deadpool_2/da_deadpool_2.srt"
+            },
+            {
+                "lang": "en",
+                "langName": "Engelsk",
+                "path": "./subtitles/Deadpool_2/en_deadpool_2.srt"
+            }
+        ]
     }
 ]

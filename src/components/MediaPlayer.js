@@ -4,7 +4,7 @@ import BottomUI from "./BottomUI";
 import data from "../data.json";
 import { Subtitles } from "./Subtitles";
 
-const movieID = 4;
+const movieID = 6;
 const mediaPath = data[movieID].media;
 const thumbnail = data[movieID].thumbnail;
 
