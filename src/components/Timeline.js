@@ -75,6 +75,8 @@ class Timeline extends Component {
   };
 
   handleMouseDown = e => {
+    if (this.props.style.player == null) return;
+
     var t = this.refs.timeline;
     let [per, calc_fix] = this.getPercentage(t, e.pageX);
 
@@ -84,6 +86,8 @@ class Timeline extends Component {
   };
 
   handleMouseUp = e => {
+    if (this.props.style.player == null) return;
+
     if (!this.state.scrubbing) return;
 
     var t = this.refs.timeline;
@@ -148,6 +152,8 @@ class Timeline extends Component {
   }
 
   getPercentage(t, pageX) {
+    if (this.props.style.player == null) return;
+
     var widthClicked = pageX - t.getBoundingClientRect().left;
     var totalWidth = t.offsetWidth;
 

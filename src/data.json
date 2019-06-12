@@ -100,7 +100,7 @@
   {
     "title": "Shazam!",
     "subTitle": "",
-    "media": "/movies/Shazam!.avi",
+    "media": "/movies/Shazam!.mp4",
     "thumbnail": "https://m.media-amazon.com/images/M/MV5BYTE0Yjc1NzUtMjFjMC00Y2I3LTg3NGYtNGRlMGJhYThjMTJmXkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
     "showTitle": false,
     "subtitles": [{
@@ -108,5 +108,23 @@
       "langName": "Engelsk",
       "path": "/subtitles/Shazam!/en_shazam!.srt"
     }]
+  },
+  {
+    "title": "Aquaman",
+    "subTitle": "",
+    "media": "/movies/Aquaman.mp4",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BOTk5ODg0OTU5M15BMl5BanBnXkFtZTgwMDQ3MDY3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    "showTitle": false,
+    "subtitles": [{
+        "lang": "da",
+        "langName": "Dansk",
+        "path": "/subtitles/Aquaman/da_aquaman.srt"
+      },
+      {
+        "lang": "en",
+        "langName": "Engelsk",
+        "path": "/subtitles/Aquaman/en_aquaman.srt"
+      }
+    ]
   }
 ]
