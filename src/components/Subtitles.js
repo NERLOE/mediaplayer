@@ -18,8 +18,6 @@ export class Subtitles extends Component {
       return;
     }
 
-    console.log(this.state.subtitles);
-
     let line;
     this.state.subtitles.map(sub => {
       let i = this.convertStampToTime(sub.i);

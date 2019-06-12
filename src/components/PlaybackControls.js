@@ -7,6 +7,7 @@ import FullscreenButton from "./buttons/fullscreen/FullscreenButton";
 
 export class PlaybackControls extends Component {
   convert_time(seconds) {
+    console.log(seconds);
     var s = seconds,
       h = Math.floor(s / 3600);
     s -= h * 3600;

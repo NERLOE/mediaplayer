@@ -401,7 +401,6 @@ class MediaPlayer extends Component {
 
   handleBack = e => {
     e.preventDefault();
-    console.log("back");
     this.props.history.push("/");
   };
 
