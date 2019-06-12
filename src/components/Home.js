@@ -34,8 +34,8 @@ export class Home extends Component {
   }
   render() {
     return (
-      <div class="home">
-        <h1 class="text-center header">
+      <div className="home">
+        <h1 className="text-center header">
           Vælg den film / serie, du gerne vil se!
         </h1>
         <section id="new">
@@ -44,8 +44,9 @@ export class Home extends Component {
               {data.map((media, i) => {
                 if (media.display != null && !media.display) return null;
 
+                let imdb = this.state.imdbJSON[i];
                 return (
-                  <div class="ml-item">
+                  <div className="ml-item" key={i}>
                     <Link
                       className="ml-mask"
                       to={
@@ -57,16 +58,20 @@ export class Home extends Component {
                           .replace(/[^0-9a-z-]/gi, "")
                       }
                     >
-                      <span className="mli-rating">
-                        IMBD {this.state.imdbJSON[i].imdbRating}
-                      </span>
+                      {imdb != null && (
+                        <span className="mli-rating">
+                          IMDB {imdb.imdbRating}
+                        </span>
+                      )}
                       <img
-                        class="thumb mli-thumb"
+                        className="thumb mli-thumb"
                         src={media.thumbnail}
                         alt=""
                       />
+                      <span className="mli-info">
+                        <h2>{media.title}</h2>
+                      </span>
                     </Link>
-                    <h1>{media.title}</h1>
                   </div>
                 );
               })}

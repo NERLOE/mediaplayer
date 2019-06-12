@@ -96,5 +96,17 @@
         "path": "/subtitles/Deadpool_2/en_deadpool_2.srt"
       }
     ]
+  },
+  {
+    "title": "Shazam!",
+    "subTitle": "",
+    "media": "/movies/Shazam!.avi",
+    "thumbnail": "https://m.media-amazon.com/images/M/MV5BYTE0Yjc1NzUtMjFjMC00Y2I3LTg3NGYtNGRlMGJhYThjMTJmXkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    "showTitle": false,
+    "subtitles": [{
+      "lang": "en",
+      "langName": "Engelsk",
+      "path": "/subtitles/Shazam!/en_shazam!.srt"
+    }]
   }
 ]
