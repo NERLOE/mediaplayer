@@ -4,6 +4,7 @@ import LanguageButton from "./buttons/language/LanguageButton";
 import AudioButton from "./buttons/audio/AudioButton";
 import QualityButton from "./buttons/quality/QualityButton";
 import FullscreenButton from "./buttons/fullscreen/FullscreenButton";
+import { CastButton } from "react-native-google-cast";
 
 export class PlaybackControls extends Component {
   convert_time(seconds) {
@@ -57,6 +58,7 @@ export class PlaybackControls extends Component {
             mute={this.props.mute}
           />
           <QualityButton />
+          <CastButton style={{ width: 24, height: 24 }} />
           <FullscreenButton />
         </div>
       </div>

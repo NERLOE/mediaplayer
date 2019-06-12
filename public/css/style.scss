@@ -1,5 +1,70 @@
+@font-face {
+    font-family: 'MTG Sans';
+    src: url("../fonts/MTGSans-Regular.eot");
+    src: local("\263A"), url("../fonts/mtg-sans/MTGSans-Regular.woff") format("woff"), url("../fonts/mtg-sans/MTGSans-Regular.ttf") format("truetype"), url("../fonts/mtg-sans/MTGSans-Regular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTG Sans';
+    src: url("../fonts/mtg-sans/MTGSans-Light.eot");
+    src: local("\263A"), url("../fonts/mtg-sans/MTGSans-Light.woff") format("woff"), url("../fonts/mtg-sans/MTGSans-Light.ttf") format("truetype"), url("../fonts/mtg-sans/MTGSans-Light.svg") format("svg");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTG Sans';
+    src: url("../fonts/mtg-sans/MTGSans-Bold.eot");
+    src: local("\263A"), url("../fonts/mtg-sans/MTGSans-Bold.woff") format("woff"), url("../fonts/mtg-sans/MTGSans-Bold.ttf") format("truetype"), url("../fonts/mtg-sans/MTGSans-Bold.svg") format("svg");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTG Sans';
+    src: url("../fonts/mtg-sans/MTGSans-Black.eot");
+    src: local("\263A"), url("../fonts/mtg-sans/MTGSans-Black.woff") format("woff"), url("../fonts/mtg-sans/MTGSans-Black.ttf") format("truetype"), url("../fonts/mtg-sans/MTGSans-Black.svg") format("svg");
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Add format('svg') when this is delivered */
+@font-face {
+    font-family: 'MTG Sans Numerals';
+    src: url("../fonts/mtg-sans-numerals/MTGSansNumerals-Regular.eot");
+    src: local("\263A"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Regular.woff") format("woff"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTG Sans Numerals';
+    src: url("../fonts/mtg-sans-numerals/MTGSansNumerals-Light.eot");
+    src: local("\263A"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Light.woff") format("woff"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTG Sans Numerals';
+    src: url("../fonts/mtg-sans-numerals/MTGSansNumerals-Bold.eot");
+    src: local("\263A"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Bold.woff") format("woff"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MTG Sans Numerals';
+    src: url("../fonts/mtg-sans-numerals/MTGSansNumerals-Black.eot");
+    src: local("\263A"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Black.woff") format("woff"), url("../fonts/mtg-sans-numerals/MTGSansNumerals-Black.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'MTG Sans', Helvetica, Arial, sans-serif;
     letter-spacing: 0rem;
     outline: none;
     -webkit-focus-ring-color: none;
@@ -52,6 +117,42 @@ html {
     font-size: 100%;
     vertical-align: baseline;
     line-height: normal;
+
+    .chromecast-curtain,
+    .chromecast-curtain-inner {
+        background-color: rgba(0, 0, 0, 0.5);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        .chromecast-text {
+            color: #fff;
+            display: block;
+            font-size: 16px;
+            font-weight: 100;
+            position: relative;
+            text-align: center;
+            top: calc(50% - 17px);
+            z-index: 4;
+        }
+
+        .chromecast-connected {
+            cursor: auto;
+            text-align: center;
+            top: calc(50% - 34px);
+
+            .chromecast-connected-icon {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDIwIj4KICAgIDxwYXRoIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTAgMTYuNjY3VjIwaDMuMjczYzAtMS44NDQtMS40NjItMy4zMzMtMy4yNzMtMy4zMzN6bTAtNC40NDV2Mi4yMjJjMy4wMSAwIDUuNDU1IDIuNDkgNS40NTUgNS41NTZoMi4xODFjMC00LjMtMy40MTQtNy43NzgtNy42MzYtNy43Nzh6bTE5LjYzNi03Ljc3OEg0LjM2NHYxLjgxMmM0LjMyIDEuNDIyIDcuNzM0IDQuOSA5LjEzIDkuM2g2LjE0MlY0LjQ0NHpNMCA3Ljc3OFYxMGM1LjQyMiAwIDkuODE4IDQuNDc4IDkuODE4IDEwSDEyQzEyIDEzLjI0NCA2LjYyMiA3Ljc3OCAwIDcuNzc4ek0yMS44MTggMEgyLjE4MkMuOTgyIDAgMCAxIDAgMi4yMjJ2My4zMzRoMi4xODJWMi4yMjJoMTkuNjM2djE1LjU1NmgtNy42MzZWMjBoNy42MzZjMS4yIDAgMi4xODItMSAyLjE4Mi0yLjIyMlYyLjIyMkMyNCAxIDIzLjAxOCAwIDIxLjgxOCAweiIvPgo8L3N2Zz4K);
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+        }
+    }
 
     .top-ui {
         position: absolute;

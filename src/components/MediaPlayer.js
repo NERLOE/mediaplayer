@@ -3,12 +3,14 @@ import BottomUI from "./BottomUI";
 
 import data from "../data.json";
 import { Subtitles } from "./Subtitles";
+import { Chromecast } from "./Chromecast";
 
 class MediaPlayer extends Component {
   constructor() {
     super();
     this.state = {
       mediaData: null,
+      chromecast: false,
       playing: false,
       show: true,
       hide: false,
@@ -96,37 +98,39 @@ class MediaPlayer extends Component {
   }
 
   play() {
-    let player = this.refs.player;
-    player.play();
+    if (!this.state.chromecast) {
+      let player = this.refs.player;
+      player.play();
 
-    this.setState(state => {
-      return {
-        ...state,
-        playing: true
-      };
-    });
-
-    this.intervalID = setInterval(() => {
-      let timelinePercentage = (player.currentTime / player.duration) * 100;
       this.setState(state => {
         return {
           ...state,
-          primaryTimelineCss: {
-            width: timelinePercentage + "%"
-          },
-          timelineLeftCss: {
-            left: timelinePercentage + "%"
-          },
-          currentTime: player.currentTime,
-          duration: player.duration,
-          player: player
+          playing: true
         };
       });
 
-      if (!this.state.playing) {
-        clearInterval(this.intervalID);
-      }
-    }, 500);
+      this.intervalID = setInterval(() => {
+        let timelinePercentage = (player.currentTime / player.duration) * 100;
+        this.setState(state => {
+          return {
+            ...state,
+            primaryTimelineCss: {
+              width: timelinePercentage + "%"
+            },
+            timelineLeftCss: {
+              left: timelinePercentage + "%"
+            },
+            currentTime: player.currentTime,
+            duration: player.duration,
+            player: player
+          };
+        });
+
+        if (!this.state.playing) {
+          clearInterval(this.intervalID);
+        }
+      }, 500);
+    }
   }
 
   handleMouseMove = e => {
@@ -438,6 +442,7 @@ class MediaPlayer extends Component {
               )}
             </span>
           </div>
+          {this.state.chromecast && <Chromecast />}
           <span>
             {this.state.loading ||
               (this.state.mediaData == null && (
@@ -476,7 +481,7 @@ class MediaPlayer extends Component {
             </div>
           )}
 
-          {this.state.mediaData != null && (
+          {this.state.mediaData != null && !this.state.chromecast && (
             <video
               ref="player"
               style={this.state.playerCSS}
