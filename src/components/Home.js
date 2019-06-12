@@ -41,7 +41,7 @@ export class Home extends Component {
         <section id="new">
           <div className={"media-list fade" + (this.state.in ? " in" : "")}>
             <span>
-              {data.map(media => {
+              {data.map((media, i) => {
                 if (media.display != null && !media.display) return null;
 
                 return (
@@ -57,7 +57,9 @@ export class Home extends Component {
                           .replace(/[^0-9a-z-]/gi, "")
                       }
                     >
-                      <span className="mli-rating">IBM</span>
+                      <span className="mli-rating">
+                        IMBD {this.state.imdbJSON[i].imdbRating}
+                      </span>
                       <img
                         class="thumb mli-thumb"
                         src={media.thumbnail}
