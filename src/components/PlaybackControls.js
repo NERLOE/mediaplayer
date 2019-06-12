@@ -7,7 +7,11 @@ import FullscreenButton from "./buttons/fullscreen/FullscreenButton";
 
 export class PlaybackControls extends Component {
   convert_time(seconds) {
-    if (isNaN(seconds)) seconds = 0;
+    let change = false;
+    if (isNaN(seconds)) {
+      seconds = 0;
+      change = true;
+    }
     var s = seconds,
       h = Math.floor(s / 3600);
     s -= h * 3600;
@@ -18,7 +22,8 @@ export class PlaybackControls extends Component {
     if (
       seconds >= 3600 ||
       this.props.props.mediaData == null ||
-      this.props.props.player == null
+      this.props.props.player == null ||
+      change
     ) {
       return (
         "0" + h + "." + (m < 10 ? "0" + m : m) + "." + (s < 10 ? "0" + s : s)
