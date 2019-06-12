@@ -4,20 +4,12 @@ import BottomUI from "./BottomUI";
 import data from "../data.json";
 import { Subtitles } from "./Subtitles";
 
-const movieID = 6;
-const mediaPath = data[movieID].media;
-const thumbnail = data[movieID].thumbnail;
-
-const vaskContainerCSS = {
-  position: "relative"
-};
-
 class MediaPlayer extends Component {
   constructor() {
     super();
     this.state = {
-      mediaData: data[movieID],
-      playing: true,
+      mediaData: null,
+      playing: false,
       show: true,
       hide: false,
       played: false,
@@ -44,7 +36,7 @@ class MediaPlayer extends Component {
         bottom: "100%"
       },
       coverImg: {
-        backgroundImage: `url(${thumbnail})`
+        backgroundImage: `url("")`
       },
       playerCSS: {
         position: "absolute",
@@ -66,13 +58,53 @@ class MediaPlayer extends Component {
   }
 
   componentDidMount() {
-    this.play();
-    this.uiTransition();
+    let title = this.props.match.params.title;
+    var movieID = null;
+
+    data.map((media, id) => {
+      if (
+        media.title
+          .toLowerCase()
+          .split(" ")
+          .join("-")
+          .replace(/[^0-9a-z-]/gi, "") == title
+      ) {
+        movieID = id;
+      }
+    });
+
+    if (movieID == null) {
+      return <h1>Kunne ikke finde det du ledte efter.</h1>;
+    }
+
+    const thumbnail = data[movieID].thumbnail;
+    this.setState(state => {
+      return {
+        ...state,
+        coverImg: {
+          backgroundImage: `url(${thumbnail})`
+        },
+        mediaData: data[movieID],
+        selectedSubtitle: data[movieID].subtitles == null ? -1 : 0
+      };
+    });
+
+    setTimeout(() => {
+      this.play();
+      this.uiTransition();
+    }, 200);
   }
 
   play() {
     let player = this.refs.player;
     player.play();
+
+    this.setState(state => {
+      return {
+        ...state,
+        playing: true
+      };
+    });
 
     this.intervalID = setInterval(() => {
       let timelinePercentage = (player.currentTime / player.duration) * 100;
@@ -240,7 +272,6 @@ class MediaPlayer extends Component {
   }
 
   handleKeyPress = e => {
-    console.log(e.keyCode);
     let volChange = 0.05;
 
     // SEEK - FORWARD & BACKWARDS - 15 SECONDS
@@ -334,7 +365,6 @@ class MediaPlayer extends Component {
       this.setState(state => {
         return {
           ...state,
-          playing: true,
           played: true,
           pausing: false,
           visualCueTime: new Date().getTime()
@@ -356,15 +386,25 @@ class MediaPlayer extends Component {
   handlePPClick = e => {
     let target = e.target;
     if (
-      target.closest(".playback-controls") &&
-      !target.classList.contains("play") &&
-      !target.classList.contains("pause")
+      target.classList.contains("browser-back") ||
+      (target.closest(".playback-controls") &&
+        !target.classList.contains("play") &&
+        !target.classList.contains("pause"))
     ) {
       return;
     }
 
+    e.target.blur();
+    document.getElementById("player-container").focus();
     this.handlePausePlay();
   };
+
+  handleBack = e => {
+    e.preventDefault();
+    console.log("back");
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div
@@ -374,7 +414,7 @@ class MediaPlayer extends Component {
         id="player-container"
         className="player-container"
       >
-        <div className="vask-container player-bg" style={vaskContainerCSS}>
+        <div className="vask-container player-bg">
           <div
             className={this.state.show ? "scene" : "scene hide"}
             onMouseMove={this.handleMouseMove}
@@ -384,11 +424,11 @@ class MediaPlayer extends Component {
             <div className="top-ui">
               <div className="ui-cell control-btn">
                 <span />
-                <button className="browser-back" />
+                <button className="browser-back" onClick={this.handleBack} />
               </div>
             </div>
             <span>
-              {!this.state.hide && (
+              {!this.state.hide != null && (
                 <BottomUI
                   changeVolume={this.changeVolume.bind(this)}
                   props={this.state}
@@ -400,11 +440,12 @@ class MediaPlayer extends Component {
             </span>
           </div>
           <span>
-            {this.state.loading && (
-              <div id="vp-spinner-container">
-                <div id="vp-spinner" />
-              </div>
-            )}
+            {this.state.loading ||
+              (this.state.mediaData == null && (
+                <div id="vp-spinner-container">
+                  <div id="vp-spinner" />
+                </div>
+              ))}
             <div className="visual-cues">
               <span>
                 {this.state.pausing &&
@@ -426,7 +467,7 @@ class MediaPlayer extends Component {
               </span>
             </div>
           </span>
-          {this.state.selectedSubtitle != -1 && (
+          {this.state.selectedSubtitle != -1 && this.state.mediaData != null && (
             <div className={"subtitle-cue" + (this.state.show ? " raise" : "")}>
               <Subtitles
                 time={this.getTime()}
@@ -436,16 +477,18 @@ class MediaPlayer extends Component {
             </div>
           )}
 
-          <video
-            ref="player"
-            style={this.state.playerCSS}
-            onLoadStart={this.handleDurationChange}
-            onSeeking={this.handleDurationChange}
-            onDurationChange={this.handleDurationChange}
-            onCanPlay={this.handleOnCanPlay}
-          >
-            <source src={mediaPath} type="video/mp4" />
-          </video>
+          {this.state.mediaData != null && (
+            <video
+              ref="player"
+              style={this.state.playerCSS}
+              onLoadStart={this.handleDurationChange}
+              onSeeking={this.handleDurationChange}
+              onDurationChange={this.handleDurationChange}
+              onCanPlay={this.handleOnCanPlay}
+            >
+              <source src={this.state.mediaData.media} type="video/mp4" />
+            </video>
+          )}
         </div>
       </div>
     );

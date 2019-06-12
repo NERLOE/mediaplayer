@@ -9,6 +9,8 @@
 html {
     margin: 0;
     padding: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
 }
 
 #vp-spinner-container {
@@ -719,6 +721,17 @@ html {
                 left: 0;
             }
         }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.25;
+
+            button {
+                &.target-btn {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -738,4 +751,191 @@ html {
     top: 0;
     position: absolute;
     width: 100%;
+}
+
+.home {
+    .carousel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+
+        .item {
+            padding: 10px;
+            display: inline-block;
+            white-space: nowrap;
+            z-index: 0;
+
+            transition: 400ms all ease-in-out;
+
+            &:hover {
+                transform: scale(1.4);
+                z-index: 100;
+
+                &:not(this) {
+                    padding: 0px 50px;
+                }
+            }
+
+            h1 {
+                font-size: 2vh;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+
+.fade {
+    opacity: 0;
+    transition: opacity .15s linear;
+
+    &.in {
+        opacity: 1;
+    }
+}
+
+.media-list {
+    display: block;
+    margin: 0 -1%;
+
+    .ml-item {
+        width: 10.5%;
+        margin: 1%;
+        float: left;
+        position: relative;
+        height: 260px;
+        overflow: hidden;
+
+        @media screen and (max-width: 1599px) {
+            height: 200px;
+        }
+
+        @media screen and (max-width: 1325px) {
+            height: 180x;
+        }
+
+        @media screen and (max-width: 1199px) {
+            width: 14.6%;
+            height: 230px;
+        }
+
+        @media screen and (max-width: 991px) {
+            width: 23%;
+            margin: 1%;
+            height: 260px;
+        }
+
+        @media screen and (max-width: 640px) {
+            height: 200px;
+        }
+
+        @media screen and (max-width: 520px) {
+            height: 250px;
+            margin: 1%;
+            width: 31.3%;
+        }
+
+        @media screen and (max-width: 479px) {
+            height: 250px;
+            margin: 1.5%;
+            width: 47%;
+        }
+
+        @media screen and (max-width: 359px) {
+            height: 230px;
+        }
+
+        .ml-mask {
+            display: inline-block;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                }
+            }
+
+            &:after,
+            &:before {
+                transition: all .2s ease 0;
+                z-index: 4;
+            }
+
+            &:before {
+                content: "";
+                background: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+
+        .mli-thumb {
+            width: 100%;
+            height: 100%;
+        }
+
+        &,
+        & .mli-info {
+            border-radius: 5px !important;
+        }
+
+        .mli-rating {
+            background: #fed700;
+            border-radius: 3px;
+            color: #222;
+            font-size: 11px;
+            font-weight: 500;
+            height: auto;
+            line-height: normal;
+            padding: 4px 6px;
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            width: auto;
+            z-index: 4;
+        }
+    }
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+
+    .thumb {
+        .mli-thumb {
+            width: 100% !important;
+            height: auto !important;
+            min-height: 100% !important;
+        }
+    }
+}
+
+.thumb {
+    background-position: 50% 25%;
+    background-size: cover;
+    display: inline-block;
 }

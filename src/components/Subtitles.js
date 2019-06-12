@@ -18,7 +18,7 @@ export class Subtitles extends Component {
       return;
     }
 
-    //console.log(this.state.subtitles);
+    console.log(this.state.subtitles);
 
     let line;
     this.state.subtitles.map(sub => {
@@ -29,8 +29,6 @@ export class Subtitles extends Component {
         line = sub.t;
       }
     });
-
-    console.log(line);
 
     return line;
   }
@@ -190,7 +188,6 @@ export class Subtitles extends Component {
         }
       } else {
         if (sub.indexOf("<i>") != -1) {
-          console.log(sub.indexOf("<i>"));
           let string = sub.replace("<i>", "").replace("</i>", "");
           sub = <i>{string}</i>;
           out = <p>{sub}</p>;
@@ -199,7 +196,6 @@ export class Subtitles extends Component {
         }
       }
 
-      console.log(out);
       return out;
     }
 

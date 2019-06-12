@@ -172,7 +172,12 @@ class Timeline extends Component {
         <div className="timeline-mask">
           <div
             ref="timeline"
-            className="slider horizontal"
+            className={
+              "slider horizontal" +
+              (style.mediaData == null || this.props.style.player == null
+                ? " disabled"
+                : "")
+            }
             onMouseDown={this.handleMouseDown}
             onMouseOver={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}
